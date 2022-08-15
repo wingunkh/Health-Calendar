@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android Programming/app/src/main/res/drawable/border.xml" value="0.2525" />
+        <entry key="..\:/Android Programming/app/src/main/res/drawable/calcal.xml" value="0.227" />
+        <entry key="..\:/Android Programming/app/src/main/res/drawable/exercise.xml" value="0.227" />
+        <entry key="..\:/Android Programming/app/src/main/res/drawable/my_button.xml" value="0.227" />
+        <entry key="..\:/Android Programming/app/src/main/res/layout/activity_main.xml" value="0.223731884057971" />
+        <entry key="..\:/Android Programming/app/src/main/res/layout/calcal.xml" value="0.2296195652173913" />
+        <entry key="..\:/Android Programming/app/src/main/res/layout/diary.xml" value="0.268" />
+        <entry key="..\:/Android Programming/app/src/main/res/layout/fragment.xml" value="0.268" />
+        <entry key="..\:/Android Programming/app/src/main/res/layout/intro.xml" value="0.2758152173913043" />
+        <entry key="..\:/Android Programming/app/src/main/res/layout/start.xml" value="0.2758152173913043" />
+        <entry key="..\:/Android Programming/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2525" />
+        <entry key="..\:/Android Programming/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2525" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
