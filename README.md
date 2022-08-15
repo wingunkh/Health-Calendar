@@ -6,3 +6,4 @@
 [**Material Calendar View**](https://github.com/prolificinteractive/material-calendarview) :calendar:를 이용하였습니다.
 
 ## :iphone:인트로 화면
+<img src="https://user-images.githubusercontent.com/58140360/184626180-a8a017f5-da66-4cc7-9685-3b18749b30a7.jpg" width="250" height="500"/>
