@@ -13,7 +13,7 @@ class Intro : AppCompatActivity() {
         setContentView(binding.root)
 
         SystemClock.sleep(1000) //1초 대기
-        val intent= Intent(this,Start::class.java)
+        val intent=Intent(this,Start::class.java)
         startActivity(intent) //인텐트를 이용한 액티비티 교체
     }
 }
