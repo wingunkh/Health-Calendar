@@ -18,3 +18,12 @@ startActivity(intent) //인텐트를 이용한 액티비티 교체
 > ##### 1초 대기 후 다음 화면으로 넘어가게 됩니다.
 
 ## :iphone: ```Start.kt```
+<img src="https://user-images.githubusercontent.com/58140360/184855625-9a1b4f33-4b0d-408a-8646-dbba70e09ff6.jpg" width="250" height="500"/>
+
+```kotlin
+val anim=AnimationUtils.loadAnimation(this,R.anim.blink)
+binding.textView2.startAnimation(anim)
+```
+> ##### 인트로 화면이 지나고 난 후 보여지는 기본 화면 입니다.
+
+> ##### 애니메이션에 의해서 "화면을 터치해서 시작" 문구가 깜빡이게 됩니다.
