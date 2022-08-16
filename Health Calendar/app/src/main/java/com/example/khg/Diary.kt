@@ -194,8 +194,8 @@ class Diary : AppCompatActivity() {
             if (date.toString() == CalendarDay.today().toString()) { //selectedDate(선택된 날짜)가 오늘일 때,
                 today=date //date 를 변수 today 에 대입
                 if (binding.ex1Name.text.toString() != "") { //ex1Name 의 editText 내용이 비어있지 않다면 (적혀있다면)
-                binding.addEx2.visibility = View.INVISIBLE //첫번째 운동 추가 버튼 비활성화
-                binding.save.visibility = View.INVISIBLE //저장 버튼 비활성화
+                    binding.addEx2.visibility = View.INVISIBLE //첫번째 운동 추가 버튼 비활성화
+                    binding.save.visibility = View.INVISIBLE //저장 버튼 비활성화
                 }
                 else { //오늘 저장 버튼을 누른 적이 없다면
                     binding.ex1.visibility = View.VISIBLE
