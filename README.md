@@ -46,4 +46,4 @@ class TodayDecorator(context: Activity):DayViewDecorator{ //현재 날짜를 강
 
 > ##### 그 외 MondayDecorator 클래스에 의해 월요일이 비활성화 되며 (월요일은 제가 다니는 헬스장의 휴뮤일 입니다.)
 
-> ##### SaturdayDecorator 클래스와 SundayDecorator 믈래스에 의해 토요일과 일요일이 각각 파란색과 빨간색으로 표시됩니다.
+> ##### SaturdayDecorator 클래스와 SundayDecorator 클래스에 의해 토요일과 일요일이 각각 파란색과 빨간색으로 표시됩니다.
