@@ -4,9 +4,11 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.graphics.Color
+import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -34,16 +36,16 @@ class Diary : AppCompatActivity() {
     private var nowday=CalendarDay.today().day
     //현재 날짜의 일
 
-
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
 
         setContentView(binding.root) //diary.xml 파일 화면 출력
 
         val cal = binding.calendar
+        cal.addDecorator(TodayDecorator(this))
+        cal.addDecorator(MondayDecorator())
         cal.addDecorator(SaturdayDecorator())
         cal.addDecorator(SundayDecorator())
-        cal.addDecorator(MondayDecorator())
 
         fun show() { //지금까지 찍은 도장을 달력에 표시하는 함수
             for (i in nowday downTo 1) { //nowday 가 1까지 감소하면서 반복
@@ -315,6 +317,21 @@ class Diary : AppCompatActivity() {
             setNegativeButton("아니오",null)
             show()
         }
+    }
+}
+
+class TodayDecorator(context: Activity):DayViewDecorator{ //현재 날짜를 강조시키는 데코레이터
+    private val drawable: Drawable = context.getDrawable(R.drawable.border)!!
+    private var calendar = Calendar.getInstance()
+
+    override fun shouldDecorate(day: CalendarDay?): Boolean {
+        day?.copyTo(calendar)
+        return day == CalendarDay.today()
+    }
+
+    override fun decorate(view: DayViewFacade?) {
+        view?.setSelectionDrawable(drawable)
+        view?.addSpan(object: StyleSpan(Typeface.BOLD){})
     }
 }
 
