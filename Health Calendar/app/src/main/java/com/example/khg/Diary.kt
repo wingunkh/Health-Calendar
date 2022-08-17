@@ -216,7 +216,8 @@ class Diary : AppCompatActivity() {
         }
 
         binding.save.setOnClickListener { //저장 버튼을 누를 때 호출되는 이벤트 리스너
-            cal.addDecorator(SaveDecorator(mythis, Collections.singleton(today)))
+            if (binding.ex1Name.text.toString() != "") //ex1Name 의 editText 내용이 비어있지 않다면 (적혀있다면)
+                cal.addDecorator(SaveDecorator(mythis, Collections.singleton(today)))
             pref.edit() {
                 putString("name1" + cal.selectedDate, binding.ex1Name.text.toString())
                 putString("weight1" + cal.selectedDate, binding.ex1Weight.text.toString())
@@ -320,20 +321,20 @@ class Diary : AppCompatActivity() {
     }
 }
 
-class TodayDecorator(context: Activity):DayViewDecorator{ //현재 날짜를 강조시키는 데코레이터
-    private val drawable: Drawable = context.getDrawable(R.drawable.border)!!
-    private var calendar = Calendar.getInstance()
+    class TodayDecorator(context: Activity):DayViewDecorator{ //현재 날짜를 강조시키는 데코레이터
+        private val drawable: Drawable = context.getDrawable(R.drawable.border)!!
+        private var calendar = Calendar.getInstance()
 
-    override fun shouldDecorate(day: CalendarDay?): Boolean {
-        day?.copyTo(calendar)
-        return day == CalendarDay.today()
-    }
+        override fun shouldDecorate(day: CalendarDay?): Boolean {
+            day?.copyTo(calendar)
+            return day == CalendarDay.today()
+        }
 
-    override fun decorate(view: DayViewFacade?) {
-        view?.setSelectionDrawable(drawable)
-        view?.addSpan(object: StyleSpan(Typeface.BOLD){})
+        override fun decorate(view: DayViewFacade?) {
+            view?.setSelectionDrawable(drawable)
+            view?.addSpan(object: StyleSpan(Typeface.BOLD){})
+        }
     }
-}
 
 class MondayDecorator:DayViewDecorator{ //월요일을 비활성화 시키는 데코레이터
     private val calendar = Calendar.getInstance()

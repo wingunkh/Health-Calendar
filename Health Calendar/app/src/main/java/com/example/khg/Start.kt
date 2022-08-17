@@ -1,13 +1,10 @@
 package com.example.khg
 
 import android.content.Intent
-import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.view.animation.AnimationUtils
 import com.example.khg.databinding.StartBinding
-import java.util.*
 
 class Start : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +19,5 @@ class Start : AppCompatActivity() {
 
         val anim=AnimationUtils.loadAnimation(this,R.anim.blink)
         binding.textView2.startAnimation(anim)
-
     }
 }
