@@ -86,9 +86,10 @@ cal.setOnDateChangedListener { widget, date, selected -> //날짜를 선택했�
 <br>
 <img src="https://user-images.githubusercontent.com/58140360/185299219-0d7cd95e-9c0e-4e7e-8280-831cbd6e1463.jpg" width="250" height="500"/>
 
-> ##### if문에 의해서 선택된 날짜가 오늘일 때, 운동 추가 버튼 및 저장 버튼이 활성화 되어 운동 기록을 자유롭게 작성 및 저장할 수 있습니다.
+> ##### 선택된 날짜가 오늘일 때, 운동 추가 버튼 및 저장 버튼이 활성화 되어 운동 기록을 자유롭게 작성 및 저장할 수 있습니다.
+
+> ##### 이미 오늘 저장 버튼을 눌렀다면 운동 기록을 수정할 수 없으므로 신중히 기록해야 합니다.
 <br>
-<img src="https://user-images.githubusercontent.com/58140360/185301390-6ff8c845-7dd5-4a02-9323-2ebb0a9e2586.jpg" width="250" height="500"/>
 
 ```kotlin
 class SaveDecorator(context: Activity , dates: Collection<CalendarDay>):DayViewDecorator{ //현재 날짜를 매개변수로 받아 도장을 달력에 표시하는 데코레이터
@@ -109,4 +110,8 @@ class SaveDecorator(context: Activity , dates: Collection<CalendarDay>):DayViewD
 <br>
 <img src="https://user-images.githubusercontent.com/58140360/185303823-befa7036-dc93-4919-bedc-5ec7e2110c17.jpg" width="250" height="500"/>
 
-> ##### 귀여운 아령 도장을 누르면 언제든지 과거의 운동 기록을 확인할 수 있습니다.
+> ##### 귀여운 아령 도장을 누르면 언제든지 해당 날짜의 운동 기록을 확인할 수 있습니다.
+<br>
+<img src="https://user-images.githubusercontent.com/58140360/185313163-d28ad09b-82d1-41de-92b6-7117a2ab79ec.jpg" width="250" height="500"/>
+
+> ##### 해당 날짜에 운동을 하지 않았다면, 운동 기록이 없다는 문구를 확인할 수 있습니다.
