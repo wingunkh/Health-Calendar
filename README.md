@@ -86,7 +86,7 @@ cal.setOnDateChangedListener { widget, date, selected -> //날짜를 선택했�
 <br>
 <img src="https://user-images.githubusercontent.com/58140360/185299219-0d7cd95e-9c0e-4e7e-8280-831cbd6e1463.jpg" width="250" height="500"/>
 
-> ##### if문에 의해서 선택된 날짜가 오늘일 때, 운동 추가 버튼 및 저장 버튼이 활성화 되어 운동 기록을 자유롭게 저장할 수 있습니다.
+> ##### if문에 의해서 선택된 날짜가 오늘일 때, 운동 추가 버튼 및 저장 버튼이 활성화 되어 운동 기록을 자유롭게 작성 및 저장할 수 있습니다.
 <br>
 <img src="https://user-images.githubusercontent.com/58140360/185301390-6ff8c845-7dd5-4a02-9323-2ebb0a9e2586.jpg" width="250" height="500"/>
 
