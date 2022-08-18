@@ -79,7 +79,7 @@ cal.setOnDateChangedListener { widget, date, selected -> //날짜를 선택했�
                 if (binding.ex1Name.text.toString() == "")  //ex1Name 의 editText 내용이 비어있다면 (적혀있지 않다면)
                     binding.empty.visibility=View.VISIBLE //운동 기록이 없을 때의 문구 출력
             }
-        }
+}
 ```
 
 > ##### 날짜를 선택하면 setOnDateChengedListener 이벤트 리스너가 호출됩니다.
