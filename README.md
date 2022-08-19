@@ -23,7 +23,7 @@ binding.textView2.startAnimation(anim)
 > ##### 인트로 화면이 지나고 난 후 보여지는 기본 화면 입니다.
 
 > ##### 애니메이션에 의해서 "화면을 터치해서 시작" 문구가 깜빡이게 됩니다.
-<br>
+## :iphone: ```Diary.kt```
 <img src="https://user-images.githubusercontent.com/58140360/184857753-1c660dfe-81f5-4d97-b2b8-791d0b754727.jpg" width="250" height="500"/>
 
 ```kotlin
@@ -109,6 +109,25 @@ class SaveDecorator(context: Activity , dates: Collection<CalendarDay>):DayViewD
 
 > ##### 저장 버튼을 누르면 SaveDecorator 클래스에 의해 해당 날짜에 귀여운 아령 도장이 찍히게 됩니다.
 <br>
+<img src="https://user-images.githubusercontent.com/58140360/185603446-b3ae20b8-1308-4a9c-8df9-c9db5a30441c.jpg" width="250" height="500"/>
+
+```kotlin
+binding.save.setOnClickListener { //저장 버튼을 누를 때 호출되는 이벤트 리스너
+            // 생략 //
+            pref.edit() {
+                // 생략 //
+                putString(cal.selectedDate.toString(),cal.selectedDate.toString())
+                apply()
+            }
+            // 생략 //
+}
+```
+
+> ##### 아령 도장이 저장되게 하는 기능을 구현하는 것이 가장 어려웠던 작업이었습니다.
+
+> ##### 현재 날짜를 키로 하는 shared-preferences 를 저장함으로써 각 날짜 별로 shared-preferences 쌍을 만들 수 있었습니다.
+
+<br>
 <img src="https://user-images.githubusercontent.com/58140360/185303823-befa7036-dc93-4919-bedc-5ec7e2110c17.jpg" width="250" height="500"/>
 
 > ##### 귀여운 아령 도장을 누르면 언제든지 해당 날짜의 운동 기록을 확인할 수 있습니다.
@@ -116,3 +135,7 @@ class SaveDecorator(context: Activity , dates: Collection<CalendarDay>):DayViewD
 <img src="https://user-images.githubusercontent.com/58140360/185313163-d28ad09b-82d1-41de-92b6-7117a2ab79ec.jpg" width="250" height="500"/>
 
 > ##### 해당 날짜에 운동을 하지 않았다면, 운동 기록이 없다는 문구를 확인할 수 있습니다.
+
+```kotlin
+
+```
