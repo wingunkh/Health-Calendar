@@ -174,7 +174,27 @@ fun show() { //지금까지 찍은 도장을 달력에 표시하는 함수
 > ##### show()함수는 현재 날짜를 기준으로 2022년 1월 1일까지 1일씩 감소하며 재귀호출을 하는 재귀함수입니다.
 
 > ##### 특정 날짜에 해당 날짜를 키로 가지는 shared-preferences가 저장되어 있다면, PastDecorator 클래스 객체를 생성합니다.
+<br>
 
+```kotlin
+class PastDecorator(context: Activity, p1:Int, p2:Int, p3:Int):DayViewDecorator{ //날짜를 매개변수로 받아 도장을 달력에 표시하는 데코레이터
+    private val drawable: Drawable = context.getDrawable(R.drawable.pic2)!!
+    private var dates: ArrayList<CalendarDay> = ArrayList()
+    private var nowyear=p1
+    private var nowmonth=p2
+    private var nowday=p3
+
+    override fun shouldDecorate(day: CalendarDay?): Boolean {
+        var date = CalendarDay.from(nowyear, nowmonth, nowday)
+        dates.add(date)
+        return dates.contains(day)
+    }
+
+    override fun decorate(view: DayViewFacade?) {
+        view?.setBackgroundDrawable(drawable)
+    }
+}
+```
 > ##### 이렇게 PastDecorator 클래스 객체를 생성하여 저장된 아령 도장들이 달력에 표시됩니다.
 <br>
 <img src="https://user-images.githubusercontent.com/58140360/185303823-befa7036-dc93-4919-bedc-5ec7e2110c17.jpg" width="250" height="500"/>
