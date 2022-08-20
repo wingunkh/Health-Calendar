@@ -1,5 +1,5 @@
 # :muscle:Health Calendar:muscle:
-* 2022-08-19 README.md 파일 최종 업로드
+* ##### 2022-08-19 README.md 파일 최종 업로드
 ## :question:Introduce
 ##### 3학년 1학기 여름방학, 제가 쓰고 싶어서 만들게 된 **운동 기록 저장 앱** 입니다.
 ##### :calendar: [**Material Calendar View**](https://github.com/prolificinteractive/material-calendarview) 를 이용하였습니다.
