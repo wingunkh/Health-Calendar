@@ -1,5 +1,5 @@
 # :muscle:Health Calendar:muscle:
-* 2022-08-19 README.md 파일 최종 업로드
+* ##### 2022-08-19 README.md 파일 최종 업로드
 ## :question:Introduce
 ##### 3학년 1학기 여름방학, 제가 쓰고 싶어서 만들게 된 **운동 기록 저장 앱** 입니다.
 ##### :calendar: [**Material Calendar View**](https://github.com/prolificinteractive/material-calendarview) 를 이용하였습니다.
@@ -23,7 +23,7 @@ binding.textView2.startAnimation(anim)
 ```
 > ##### 인트로 화면이 지나고 난 후에 보여지는 기본 화면입니다.
 
-> ##### 애니메이션에 의해서 "화면을 터치해서 시작" 문구가 깜빡이게 됩니다.
+> ##### 애니메이션에 의해 "화면을 터치해서 시작" 문구가 깜빡이게 됩니다.
 ## :iphone: ```Diary.kt```
 <img src="https://user-images.githubusercontent.com/58140360/184857753-1c660dfe-81f5-4d97-b2b8-791d0b754727.jpg" width="250" height="500"/>
 
@@ -93,7 +93,7 @@ cal.setOnDateChangedListener { widget, date, selected -> //날짜를 선택했�
 <img src="https://user-images.githubusercontent.com/58140360/185601763-3734008e-2d66-4e0b-826f-8c4217527704.jpg" width="250" height="500"/>
 
 ```kotlin
-class SaveDecorator(context: Activity , dates: Collection<CalendarDay>):DayViewDecorator{ //현재 날짜를 매개변수로 받아 도장을 달력에 표시하는 데코레이터
+class SaveDecorator(context: Activity , dates: Collection<CalendarDay>):DayViewDecorator{ //현재 날짜를 매개변수로 받아 도장을 달력에 찍는 데코레이터
     private val drawable: Drawable = context.getDrawable(R.drawable.pic2)!!
     private var dates: HashSet<CalendarDay> = HashSet(dates)
 
@@ -111,7 +111,7 @@ class SaveDecorator(context: Activity , dates: Collection<CalendarDay>):DayViewD
 <img src="https://user-images.githubusercontent.com/58140360/185603446-b3ae20b8-1308-4a9c-8df9-c9db5a30441c.jpg" width="250" height="500"/>
 
 ```kotlin
-class PastDecorator(context: Activity, p1:Int, p2:Int, p3:Int):DayViewDecorator{ //날짜를 매개변수로 받아 도장을 달력에 표시하는 데코레이터
+class PastDecorator(context: Activity, p1:Int, p2:Int, p3:Int):DayViewDecorator{ //날짜를 매개변수로 받아 해당 날짜의 도장을 달력에 표시하는 데코레이터
     private val drawable: Drawable = context.getDrawable(R.drawable.pic2)!!
     private var dates: ArrayList<CalendarDay> = ArrayList()
     private var nowyear=p1
@@ -174,7 +174,27 @@ fun show() { //지금까지 찍은 도장을 달력에 표시하는 함수
 > ##### show()함수는 현재 날짜를 기준으로 2022년 1월 1일까지 1일씩 감소하며 재귀호출을 하는 재귀함수입니다.
 
 > ##### 특정 날짜에 해당 날짜를 키로 가지는 shared-preferences가 저장되어 있다면, PastDecorator 클래스 객체를 생성합니다.
+<br>
 
+```kotlin
+class PastDecorator(context: Activity, p1:Int, p2:Int, p3:Int):DayViewDecorator{ //날짜를 매개변수로 받아 도장을 달력에 표시하는 데코레이터
+    private val drawable: Drawable = context.getDrawable(R.drawable.pic2)!!
+    private var dates: ArrayList<CalendarDay> = ArrayList()
+    private var nowyear=p1
+    private var nowmonth=p2
+    private var nowday=p3
+
+    override fun shouldDecorate(day: CalendarDay?): Boolean {
+        var date = CalendarDay.from(nowyear, nowmonth, nowday)
+        dates.add(date)
+        return dates.contains(day)
+    }
+
+    override fun decorate(view: DayViewFacade?) {
+        view?.setBackgroundDrawable(drawable)
+    }
+}
+```
 > ##### 이렇게 PastDecorator 클래스 객체를 생성하여 저장된 아령 도장들이 달력에 표시됩니다.
 <br>
 <img src="https://user-images.githubusercontent.com/58140360/185303823-befa7036-dc93-4919-bedc-5ec7e2110c17.jpg" width="250" height="500"/>
