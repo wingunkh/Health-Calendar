@@ -375,7 +375,7 @@ class SundayDecorator:DayViewDecorator{ //일요일을 빨간색으로 보이게
     }
 }
 
-class SaveDecorator(context: Activity , dates: Collection<CalendarDay>):DayViewDecorator{ //현재 날짜를 매개변수로 받아 도장을 달력에 표시하는 데코레이터
+class SaveDecorator(context: Activity , dates: Collection<CalendarDay>):DayViewDecorator{ //현재 날짜를 매개변수로 받아 도장을 달력에 찍는 데코레이터
     private val drawable: Drawable = context.getDrawable(R.drawable.pic2)!!
     private var dates: HashSet<CalendarDay> = HashSet(dates)
 
@@ -388,7 +388,7 @@ class SaveDecorator(context: Activity , dates: Collection<CalendarDay>):DayViewD
     }
 }
 
-class PastDecorator(context: Activity, p1:Int, p2:Int, p3:Int):DayViewDecorator{ //날짜를 매개변수로 받아 도장을 달력에 표시하는 데코레이터
+class PastDecorator(context: Activity, p1:Int, p2:Int, p3:Int):DayViewDecorator{ //날짜를 매개변수로 받아 해당 날짜의 도장을 달력에 표시하는 데코레이터
     private val drawable: Drawable = context.getDrawable(R.drawable.pic2)!!
     private var dates: ArrayList<CalendarDay> = ArrayList()
     private var nowyear=p1
