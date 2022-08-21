@@ -93,7 +93,7 @@ cal.setOnDateChangedListener { widget, date, selected -> //날짜를 선택했�
 <img src="https://user-images.githubusercontent.com/58140360/185601763-3734008e-2d66-4e0b-826f-8c4217527704.jpg" width="250" height="500"/>
 
 ```kotlin
-class SaveDecorator(context: Activity , dates: Collection<CalendarDay>):DayViewDecorator{ //현재 날짜를 매개변수로 받아 도장을 달력에 는 데코레이터
+class SaveDecorator(context: Activity , dates: Collection<CalendarDay>):DayViewDecorator{ //현재 날짜를 매개변수로 받아 도장을 달력에 찍는 데코레이터
     private val drawable: Drawable = context.getDrawable(R.drawable.pic2)!!
     private var dates: HashSet<CalendarDay> = HashSet(dates)
 
